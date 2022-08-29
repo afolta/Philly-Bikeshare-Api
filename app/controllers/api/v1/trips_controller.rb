@@ -9,7 +9,7 @@ class Api::V1::TripsController < ApplicationController
     if trip
       render json: product, status: 200
     else
-      render json {error: "Trip not found."}
+      render json: {error: "Trip not found."}
     end
   end
 
@@ -24,6 +24,7 @@ class Api::V1::TripsController < ApplicationController
         :start_station,
         :end_station
       ])
+    end
 end
 
 

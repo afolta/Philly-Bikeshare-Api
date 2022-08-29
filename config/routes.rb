@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :trips, only: [:index, :show, :create]
+      resources :trips, only: %i[index show create]
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
