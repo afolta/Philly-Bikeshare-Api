@@ -7,7 +7,7 @@ class Api::V1::TripsController < ApplicationController
   def show
     trip = Trip.find_by(id: params[:id])
     if trip
-      render json: product, status: 200
+      render json: trip, status: 200
     else
       render json: {error: "Trip not found."}
     end
@@ -16,6 +16,7 @@ class Api::V1::TripsController < ApplicationController
   private
     def trip_params
       params.require(:trip).permit([
+        :trip_id,
         :bike_type,
         :bike_id,
         :duration,
