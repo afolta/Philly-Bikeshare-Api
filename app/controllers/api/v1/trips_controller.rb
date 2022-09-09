@@ -5,7 +5,7 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def show
-    trip = Trip.find_by(id: params[:id])
+    trip = Trip.find_by(trip_id: params[:id])
     if trip
       render json: trip, status: 200
     else
