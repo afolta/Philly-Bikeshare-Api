@@ -33,8 +33,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_012416) do
     t.integer "bike_type"
     t.integer "bike_id"
     t.integer "duration"
-    t.datetime "start_date", precision: nil
-    t.datetime "end_date", precision: nil
     t.integer "start_station"
     t.integer "end_station"
     t.datetime "created_at", null: false
