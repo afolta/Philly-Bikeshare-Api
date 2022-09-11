@@ -1,5 +1,7 @@
-class StartDateResource < JSONAPI::Resource
-	attributes :start_year, :start_month, :start_day, :start_timezone, :start_hour, :start_minute, :start_second
+# frozen_string_literal: true
 
-	has_one :trip
+class StartDateResource < JSONAPI::Resource
+  attributes :start_year, :start_month, :start_day, :start_timezone, :start_hour, :start_minute, :start_second
+
+  has_one :trip
 end
