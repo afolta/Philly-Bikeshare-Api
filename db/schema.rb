@@ -12,9 +12,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_220_909_012_416) do
+ActiveRecord::Schema[7.0].define(version: 20_220_912_223_639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'end_dates', force: :cascade do |t|
+    t.integer 'end_year'
+    t.integer 'end_month'
+    t.integer 'end_day'
+    t.string 'end_timezone'
+    t.integer 'end_hour'
+    t.integer 'end_minute'
+    t.integer 'end_second'
+    t.bigint 'trip_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['trip_id'], name: 'index_end_dates_on_trip_id'
+  end
 
   create_table 'start_dates', force: :cascade do |t|
     t.integer 'start_year'
@@ -41,5 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 20_220_909_012_416) do
     t.datetime 'updated_at', null: false
   end
 
+  add_foreign_key 'end_dates', 'trips'
   add_foreign_key 'start_dates', 'trips'
 end

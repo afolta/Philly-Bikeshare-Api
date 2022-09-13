@@ -37,3 +37,23 @@ a_second_trip.start_dates.create!(
   start_minute: 22,
   start_second: 51
 )
+
+a_trip.end_dates.create!(
+  end_year: '2022',
+  end_month: 5,
+  end_day: 2,
+  end_timezone: 'UTC',
+  end_hour: 18,
+  end_minute: 57,
+  end_second: 48
+)
+
+a_second_trip.end_dates.create!(
+  end_year: '2022',
+  end_month: 6,
+  end_day: 16,
+  end_timezone: 'UTC',
+  end_hour: 19,
+  end_minute: 32,
+  end_second: 21
+)
