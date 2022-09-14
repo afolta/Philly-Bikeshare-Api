@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class StartDateTest < ActiveSupport::TestCase
+class TripDateControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

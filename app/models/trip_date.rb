@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class EndDate < ApplicationRecord
+class TripDate < ApplicationRecord
   belongs_to :trip
 end
