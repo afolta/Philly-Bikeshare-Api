@@ -6,7 +6,9 @@ a_trip = Trip.create!(
   bike_id: 354,
   duration: 5,
   start_station: 4,
-  end_station: 9
+  end_station: 9,
+  start_time: '2022-05-02T18:52:44',
+  end_time: '2022-05-02 18:57:48'
 )
 
 a_second_trip = Trip.create!(
@@ -15,7 +17,9 @@ a_second_trip = Trip.create!(
   bike_id: 129,
   duration: 10,
   start_station: 8,
-  end_station: 12
+  end_station: 12,
+  start_time: '2022-06-16 19:22:51',
+  end_time: '2022-06-16 19:32:21'
 )
 
 a_trip.start_dates.create!(

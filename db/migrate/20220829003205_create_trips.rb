@@ -9,6 +9,8 @@ class CreateTrips < ActiveRecord::Migration[7.0]
       t.integer :duration
       t.integer :start_station
       t.integer :end_station
+      t.datetime :start_time
+      t.datetime :end_time
 
       t.timestamps
     end

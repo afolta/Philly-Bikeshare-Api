@@ -51,6 +51,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_912_223_639) do
     t.integer 'duration'
     t.integer 'start_station'
     t.integer 'end_station'
+    t.datetime 'start_time'
+    t.datetime 'end_time'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
