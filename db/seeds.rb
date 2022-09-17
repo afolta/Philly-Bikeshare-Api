@@ -6,7 +6,7 @@ a_trip = Trip.create!(
   bike_id: 354,
   duration: 5,
   start_station: 4,
-  end_station: 9,
+  end_station: 8,
   start_time: '2022-05-02T18:52:44',
   end_time: '2022-05-02 18:57:48'
 )
@@ -17,7 +17,7 @@ a_second_trip = Trip.create!(
   bike_id: 129,
   duration: 10,
   start_station: 8,
-  end_station: 12,
+  end_station: 4,
   start_time: '2022-06-16 19:22:51',
   end_time: '2022-06-16 19:32:21'
 )
@@ -52,4 +52,18 @@ a_second_trip.trip_dates.create!(
   end_minute: 32,
   start_second: 51,
   end_second: 21
+)
+
+Station.create!(
+  station_id: 4,
+  station_name: '40th & Spruce',
+  day_of_go_live_date: '4/23/2015',
+  status: 'Active'
+)
+
+Station.create!(
+  station_id: 8,
+  station_name: '33rd & Market',
+  day_of_go_live_date: '4/23/2015',
+  status: 'Active'
 )
