@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  end_year: 1
+  end_month: 1
+  end_day: 1
+  end_timezone: MyString
+  end_hour: 1
+  end_minute: 1
+  end_second: 1
+
+two:
+  end_year: 1
+  end_month: 1
+  end_day: 1
+  end_timezone: MyString
+  end_hour: 1
+  end_minute: 1
+  end_second: 1
