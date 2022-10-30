@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_105251) do
   enable_extension "plpgsql"
 
   create_table "stations", force: :cascade do |t|
-    t.integer "station_id"
     t.string "station_name"
     t.string "day_of_go_live_date"
     t.string "status"
@@ -44,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_15_105251) do
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer "trip_id"
     t.integer "bike_type"
     t.integer "bike_id"
     t.integer "duration"

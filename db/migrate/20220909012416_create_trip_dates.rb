@@ -9,7 +9,7 @@ class CreateTripDates < ActiveRecord::Migration[7.0]
       t.integer :end_month
       t.integer :start_day
       t.integer :end_day
-      t.string  :timezone
+      t.string :timezone
       t.integer :start_hour
       t.integer :end_hour
       t.integer :start_minute

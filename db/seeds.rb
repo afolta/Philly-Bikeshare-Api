@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 a_trip = Trip.create!(
-  trip_id: 27_263,
   bike_type: 1,
   bike_id: 354,
   duration: 5,
@@ -12,7 +11,6 @@ a_trip = Trip.create!(
 )
 
 a_second_trip = Trip.create!(
-  trip_id: 27_264,
   bike_type: 2,
   bike_id: 129,
   duration: 10,
@@ -55,14 +53,12 @@ a_second_trip.trip_dates.create!(
 )
 
 Station.create!(
-  station_id: 4,
   station_name: '40th & Spruce',
   day_of_go_live_date: '4/23/2015',
   status: 'Active'
 )
 
 Station.create!(
-  station_id: 8,
   station_name: '33rd & Market',
   day_of_go_live_date: '4/23/2015',
   status: 'Active'
