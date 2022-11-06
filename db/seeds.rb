@@ -54,12 +54,12 @@ a_second_trip.trip_dates.create!(
 
 Station.create!(
   station_name: '40th & Spruce',
-  day_of_go_live_date: '4/23/2015',
+  day_of_go_live_date: '2015-04-23',
   status: 'Active'
 )
 
 Station.create!(
   station_name: '33rd & Market',
-  day_of_go_live_date: '4/23/2015',
+  day_of_go_live_date: '2015-04-23',
   status: 'Active'
 )
