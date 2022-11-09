@@ -1,4 +1,19 @@
 # frozen_string_literal: true
+Station.create!(
+  station_name: '40th & Spruce',
+  day_of_go_live_date: '2015-04-23',
+  status: 'Active'
+)
+
+Station.create!(
+  station_name: '33rd & Market',
+  day_of_go_live_date: '2015-04-23',
+  status: 'Active'
+)
+
+StartStation.create!
+
+EndStation.create!
 
 a_trip = Trip.create!(
   bike_type: 1,
@@ -50,16 +65,4 @@ a_second_trip.trip_dates.create!(
   end_minute: 32,
   start_second: 51,
   end_second: 21
-)
-
-Station.create!(
-  station_name: '40th & Spruce',
-  day_of_go_live_date: '2015-04-23',
-  status: 'Active'
-)
-
-Station.create!(
-  station_name: '33rd & Market',
-  day_of_go_live_date: '2015-04-23',
-  status: 'Active'
 )
