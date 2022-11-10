@@ -10,19 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_07_215010) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_15_105251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "end_stations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "start_stations", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "stations", force: :cascade do |t|
     t.string "station_name"
@@ -56,15 +46,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_07_215010) do
     t.integer "bike_type"
     t.integer "bike_id"
     t.integer "duration"
-    t.integer "start_station"
-    t.integer "end_station"
+    t.integer "start_station_id"
+    t.integer "end_station_id"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "stationable_type"
-    t.bigint "stationable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["stationable_type", "stationable_id"], name: "index_trips_on_stationable"
   end
 
   add_foreign_key "trip_dates", "trips"

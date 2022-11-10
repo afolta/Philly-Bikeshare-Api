@@ -2,6 +2,6 @@
 
 class Trip < ApplicationRecord
   has_many :trip_dates
-  has_one :start_station, as: :stationable
-  has_one :end_station, as: :stationable
+  belongs_to :start_station, class_name: 'Station', foreign_key: 'start_station_id'
+  belongs_to :end_station, class_name: 'Station', foreign_key: 'end_station_id'
 end

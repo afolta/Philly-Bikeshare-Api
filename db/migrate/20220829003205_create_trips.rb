@@ -6,11 +6,10 @@ class CreateTrips < ActiveRecord::Migration[7.0]
       t.integer :bike_type
       t.integer :bike_id
       t.integer :duration
-      t.integer :start_station
-      t.integer :end_station
+      t.integer :start_station_id
+      t.integer :end_station_id
       t.datetime :start_time
       t.datetime :end_time
-      t.references :stationable, polymorphic: true
 
       t.timestamps
     end
