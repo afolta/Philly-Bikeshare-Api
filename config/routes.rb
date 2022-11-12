@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   jsonapi_resources :trips
-  get "/stations" => "stations#index"
-  get "stations/:id" => "stations#show"
+  get '/trips/station/:station_name' => 'trips#station'
+  get '/stations' => 'stations#index'
+  get 'stations/:id' => 'stations#show'
 end

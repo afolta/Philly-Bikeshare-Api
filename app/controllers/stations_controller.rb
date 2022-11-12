@@ -8,7 +8,7 @@ class StationsController < JSONAPI::ResourceController
   end
 
   def show
-    trip =  Station.find(params[:id])
+    trip = Station.find(params[:id])
     render json: trip
   end
 end
