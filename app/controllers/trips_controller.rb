@@ -9,7 +9,7 @@ class TripsController < JSONAPI::ResourceController
   end
 
   def start_station
-    trip = Trip.joins("INNER JOIN stations ON stations.id = trips.start_station_id WHERE stations.name='#{params[:start_station]}'")
+    Trip.joins("INNER JOIN stations ON stations.id = trips.start_station_id WHERE stations.name='#{params[:start_station]}'")
   end
 
   def trips_by_start_station
