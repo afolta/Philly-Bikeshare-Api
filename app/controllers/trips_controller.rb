@@ -18,6 +18,6 @@ class TripsController < JSONAPI::ResourceController
 
   def count
     count = start_station.count
-    render json: { count: count }
+    render json: { start_station: params[:start_station], count: count }
   end
 end
