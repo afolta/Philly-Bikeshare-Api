@@ -2,12 +2,12 @@
 
 one:
   station_id: 1
-  station_name: MyString
+  name: MyString
   day_of_go_live_date: 2022-09-15
   status: MyString
 
 two:
   station_id: 1
-  station_name: MyString
+  name: MyString
   day_of_go_live_date: 2022-09-15
   status: MyString
