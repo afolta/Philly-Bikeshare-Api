@@ -21,8 +21,17 @@ class TripsController < JSONAPI::ResourceController
     render json: { start_station: params[:start_station], count: count }
   end
 
+  def trip_calculations
+    average_duration = start_station.average(:duration)
+    count = start_station.count
+    render json: { count: count, average: average_duration }
+  end
+
   def date
-    trip = Trip.where('extract(year from start_time) = ?', params[:date])
+    # trip = Trip.last.start_time.strftime('%d-%m-%y')
+    # date_input = Time.parse(params[:date])
+    # render json: date_input
+    trip = Trip.where( 'extract(year from start_time) = ?', params[:date])
     render json: trip
   end
 end
