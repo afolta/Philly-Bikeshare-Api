@@ -20,4 +20,9 @@ class TripsController < JSONAPI::ResourceController
     count = start_station.count
     render json: { start_station: params[:start_station], count: count }
   end
+
+  def date
+    trip = Trip.where('extract(year from start_time) = ?', params[:date])
+    render json: trip
+  end
 end

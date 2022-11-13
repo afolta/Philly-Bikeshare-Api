@@ -12,7 +12,7 @@ Station.create!(
   status: 'Active'
 )
 
-a_trip = Trip.create!(
+Trip.create!(
   bike_type: 1,
   bike_id: 354,
   duration: 5,
@@ -22,7 +22,7 @@ a_trip = Trip.create!(
   end_time: '2022-05-02 18:57:48'
 )
 
-a_second_trip = Trip.create!(
+Trip.create!(
   bike_type: 2,
   bike_id: 129,
   duration: 10,
@@ -30,4 +30,14 @@ a_second_trip = Trip.create!(
   end_station_id: 2,
   start_time: '2022-06-16 19:22:51',
   end_time: '2022-06-16 19:32:21'
+)
+
+Trip.create!(
+  bike_type: 2,
+  bike_id: 129,
+  duration: 10,
+  start_station_id: 1,
+  end_station_id: 2,
+  start_time: '2021-06-15 19:22:51',
+  end_time: '2021-06-15 19:32:21'
 )
