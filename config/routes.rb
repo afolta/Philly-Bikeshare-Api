@@ -7,5 +7,5 @@ Rails.application.routes.draw do
 
   get '/trips/station/:start_station' => 'trips#trips_by_start_station'
   get '/trips/calculations/:start_station' => 'trips#trip_calculations'
-  get '/trips/count/date/:date' => 'trips#date'
+  get '/trips/date/:date' => 'trips#date'
 end
