@@ -35,12 +35,13 @@ Trip.create!(
 
 # CSV.foreach(Rails.root.join('lib/assets/indego-trips-2022-q1.csv'), headers: true) do |row|
 
+
 #   Trip.create!({
 #     bike_type_id: 'standard',
 #     bike_id: row[10],
 #     duration: row[1],
 #     start_station_id: row[4],
-#     end_station_id: row[6],
+#     end_station_id: row[7],
 #     start_time: row[2],
 #     end_time: row[3]
 #   })
