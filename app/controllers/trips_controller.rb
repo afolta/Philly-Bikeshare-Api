@@ -5,14 +5,7 @@ class TripsController < JSONAPI::ResourceController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: params
-
-    # render json: Trip.where(duration: params[:duration]) || Trip.all
-
-    # duration
-    # bike_type
-    # start_station
-    # end_station
+    render json: Trip.all
   end
 
   def start_station
