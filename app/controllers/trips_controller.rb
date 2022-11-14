@@ -5,7 +5,14 @@ class TripsController < JSONAPI::ResourceController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Trip.all
+    render json: params
+
+    # render json: Trip.where(duration: params[:duration]) || Trip.all
+
+    # duration
+    # bike_type
+    # start_station
+    # end_station
   end
 
   def start_station
@@ -23,8 +30,8 @@ class TripsController < JSONAPI::ResourceController
   end
 
   def date
-    date = params[:date].to_datetime
-    trip = Trip.where(start_time: date.all_day)
+    start_date = params[:start_date].to_datetime
+    trip = Trip.where(start_time: start_date.all_day)
 
     render json: trip
   end
