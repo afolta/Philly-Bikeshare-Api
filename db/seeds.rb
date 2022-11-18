@@ -6,7 +6,9 @@ CSV.foreach(Rails.root.join('lib/assets/indego-stations.csv'), headers: true) do
     external_station_id: row[0],
     name: row[1],
     day_of_go_live_date: row[2],
-    status: row[3]
+    status: row[3],
+    latitude: row[4],
+    longitude: row[5]
   })
 end
 
