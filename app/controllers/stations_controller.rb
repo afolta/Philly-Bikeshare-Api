@@ -4,7 +4,8 @@ class StationsController < JSONAPI::ResourceController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Station.all
+    @stations = Station.all
+    render template: "/stations/index"
   end
 
   def show

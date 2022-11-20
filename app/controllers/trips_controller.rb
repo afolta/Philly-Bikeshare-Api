@@ -1,18 +1,19 @@
 # frozen_string_literal: true
+
 # https://guides.rubyonrails.org/active_record_querying.html
 
-class TripsController < JSONAPI::ResourceController
+class TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    trips = Trip.all
+    @trips = Trip.all
 
     if params[:start_date]
       start_date = params[:start_date].to_datetime
-      trips = Trip.where(start_time: start_date.all_day)
+      @trips = Trip.where(start_time: start_date.all_day)
     end
 
-    render json: trips
+    render template: "/trips/index"
   end
 
   def start_station
