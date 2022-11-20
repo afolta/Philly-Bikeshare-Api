@@ -1,5 +1,14 @@
-<h1>Trips</h1>
-<% @stations.each do |station| %>
-  <h2><%= station.id %></h2>
-  <p>Station Name: <%= station.name%></p>
-<% end %>
+<html>
+  <head>
+    <title>Trips</title>
+    <div class="row">
+    <div class="col-xs-6">
+  </head>
+  <body>
+        <h1>Trips</h1>
+        <% @stations.each do |station| %>
+          <h2><%= station.id %></h2>
+          <p>Station Name: <%= station.name%></p>
+        <% end %>
+    </body>
+</html>

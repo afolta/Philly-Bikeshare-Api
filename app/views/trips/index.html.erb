@@ -1,5 +1,12 @@
-<div class="row">
-  <div class="col-xs-6">
-    <%= line_chart @trips.group_by_day(:start_time).count, xtitle: "Date", ytitle: "Trips", download: true, title: "Trips by Date", width: "800px", height: "500px" %>
-  </div>
-</div>
+<html>
+	<head>
+		<title>Trips</title>
+		<div class="row">
+		<div class="col-xs-6">
+	</head>
+	<body>
+		    <%= line_chart @trips.group_by_day(:start_time).count, xtitle: "Date", ytitle: "Trips", download: true, title: "Trips by Date", width: "800px", height: "500px" %>
+		  </div>
+		</div>
+    </body>
+</html>
