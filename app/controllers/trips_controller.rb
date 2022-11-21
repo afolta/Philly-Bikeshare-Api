@@ -29,4 +29,8 @@ class TripsController < ApplicationController
     count = start_station.count
     render json: { trip_count: count, average_duration: average_duration }
   end
+
+  def trip_date
+    p params
+  end
 end

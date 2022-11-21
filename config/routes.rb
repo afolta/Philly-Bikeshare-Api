@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get '/trips/trips-date' => 'trips#index'
   jsonapi_resources :trips
   get '/stations' => 'stations#index'
   get 'stations/:id' => 'stations#show'
