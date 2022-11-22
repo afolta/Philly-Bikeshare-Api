@@ -8,9 +8,9 @@ class TripsController < ApplicationController
   def index
     @trips = Trip.all
 
-    if params[:start_date]
-      start_date = params[:start_date].to_datetime
-      @trips = Trip.where(start_time: start_date.all_day)
+    if params[:start_date] || params[:end_date]
+      # end_date = params[:end_date].to_datetime
+      @trips = Trip.where("start_time >= :start_date AND start_time <= :end_date", {start_date: params[:start_date].to_datetime, end_date: params[:end_date].to_datetime} )
     end
 
     render template: "/trips/index"
@@ -28,9 +28,5 @@ class TripsController < ApplicationController
     average_duration = start_station.average(:duration).round(2)
     count = start_station.count
     render json: { trip_count: count, average_duration: average_duration }
-  end
-
-  def trip_date
-    p params
   end
 end
