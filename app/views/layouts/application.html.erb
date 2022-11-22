@@ -68,10 +68,10 @@
          }
          #end_date_content{
             title: 'End Date';
-            align-items: center;
-            align-self: center;
-            align-content: center;
-            text-align: center;
+            align-items: left;
+            align-self: left;
+            align-content: left;
+            text-align: left;
          }
       </style>
     <div class="start_date_container">
@@ -80,9 +80,6 @@
             <br>
               <p>Start Date</p><br>
               <input type = "date" name = "start_date" id = "start_date">
-              <div>
-                <button id = "start_date_filter" >Filter</button>
-              </div>
           </div>
    </div>
    <div class="end_date_container">
@@ -92,7 +89,7 @@
               <p>End Date</p><br>
               <input type = "date" name = "end_date" id = "end_date">
               <div>
-                <button id = "end_date_filter" >Filter</button>
+                <button id = "end_date_filter" >Filter Date</button>
               </div>
           </div>
    </div>
@@ -102,21 +99,14 @@
     <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script >
           window.onload=function() {
-          const submitButton= document.getElementById("start_date_filter")
-          var start_date = document.getElementById("start_date")
-          submitButton.addEventListener("click", function() {
-            console.log("Clicked button")
-            console.log(start_date.value)
-            location.href = '/trips?start_date='+start_date.value;
-        })
-      };
-          window.onload=function() {
               const submitButton= document.getElementById("end_date_filter")
-              var start_date = document.getElementById("end_date")
+              var start_date = document.getElementById("start_date")
+              var end_date = document.getElementById("end_date")
               submitButton.addEventListener("click", function() {
                 console.log("Clicked button")
+                console.log(start_date.value)
                 console.log(end_date.value)
-                location.href = '/trips?end_date='+end_date.value;
+                location.href = "/trips?start_date=" + start_date.value + "&end_date=" + end_date.value;
             })
           }
     </script>
