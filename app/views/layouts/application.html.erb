@@ -39,10 +39,6 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>
@@ -51,46 +47,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: black;
          }
-         .start_date_container{
+         .date_container{
             margin: auto;
             padding: auto;
          }
-         #start_date_content{
+         #date_content{
             title: 'Start Date';
             align-items: left;
             align-self: left;
             align-content: left;
             text-align: left;
          }
-         .end_date_container{
-            margin: auto;
-            padding: auto;
-         }
-         #end_date_content{
-            title: 'End Date';
-            align-items: left;
-            align-self: left;
-            align-content: left;
-            text-align: left;
-         }
       </style>
-    <div class="start_date_container">
+    <div class="date_container">
       <div class="row">
-          <div class = "col-sm-12 col-lg-12 " id = "start_date_content" >
+          <div class = "col-sm-12 col-lg-12 " id = "date_content" >
             <br>
-              <p>Start Date</p><br>
-              <input type = "date" name = "start_date" id = "start_date">
-          </div>
-   </div>
-   <div class="end_date_container">
-      <div class="row">
-          <div class = "col-sm-12 col-lg-12 " id = "end_date_content" >
-            <br>
-              <p>End Date</p><br>
-              <input type = "date" name = "end_date" id = "end_date">
-              <div>
-                <button id = "end_date_filter" >Filter Date</button>
-              </div>
+              <p>Start Date <input type = "date" name = "start_date" id = "start_date"></p>
+              <p>End Date <input type = "date" name = "end_date" id = "end_date"> <button id = "end_date_filter" >Filter Date</button></p>
+            </br>
           </div>
    </div>
    </div>
