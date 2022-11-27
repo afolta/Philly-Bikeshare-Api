@@ -8,7 +8,7 @@ class TripsController < ApplicationController
   def index
     @trips = Trip.all
 
-    if params[:start_date] || params[:end_date]
+    if params[:start_date] && params[:end_date]
       # end_date = params[:end_date].to_datetime
       @trips = Trip.where("start_time >= :start_date AND start_time <= :end_date", {start_date: params[:start_date].to_datetime, end_date: params[:end_date].to_datetime} )
     end
