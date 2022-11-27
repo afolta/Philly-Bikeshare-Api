@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-class StationsController < JSONAPI::ResourceController
+class StationsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: Station.all
+    @stations = Station.all
+    render template: "/stations/index"
   end
 
   def show
