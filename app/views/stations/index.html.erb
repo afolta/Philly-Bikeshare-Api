@@ -65,14 +65,15 @@
         });
 
         data.forEach((station) => {
-          let marker = new mapboxgl.Marker().setLngLat([station.longitude, station.latitude]).addTo(map);
-        });
-
-        data.forEach((station) => {
-          let popup = new mapboxgl.Popup({ offset: 25 })
-           .setHTML(
-                  `<h3>${station.name}</h3>`
-                ).addTo(map);
+          let marker = new mapboxgl.Marker()
+          .setLngLat([station.longitude, station.latitude])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                `<h3>Station: ${station.name}</h3>`
+              )
+          )
+          .addTo(map);
         });
 
         map.on("style.load", () => {
@@ -80,7 +81,8 @@
         });
 
             })
-        });        
+        });
+        
         </script>
     </body>
 </html>
