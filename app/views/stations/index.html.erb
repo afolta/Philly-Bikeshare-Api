@@ -2,7 +2,6 @@
   <head>
     <meta charset="utf-8" />
     <title>Stations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans"
       rel="stylesheet"
@@ -26,7 +25,7 @@
     }
 
     .marker {
-      background-image: url('mapbox-icon.png');
+      background-image: url('https://bicycletransit.wpenginepowered.com/wp-content/themes/indego/library/images/favicon.ico');
       background-size: cover;
       width: 50px;
       height: 50px;
@@ -49,20 +48,21 @@
 
 <div id='map' style='width: 500px; height: 600px;'></div>
         <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZm9sdGFhcyIsImEiOiJjajBiNTRwZXEwMnVlMndvMjZnMWYyZzkxIn0.wMplMNqPeI1kNVVfR9RvVg';
+        mapboxgl.accessToken = 
+        'pk.eyJ1IjoiZm9sdGFhcyIsImEiOiJjajBiNTRwZXEwMnVlMndvMjZnMWYyZzkxIn0.wMplMNqPeI1kNVVfR9RvVg';
 
         const geojson = {
-          type: 'FeatureCollection',
-          features: [
+          'type': 'FeatureCollection',
+          'features': [
             {
-              type: 'Feature',
-              geometry: {
-                type: 'Point',
-                coordinates: [-75.174744, 39.93082]
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [-75.174744, 39.93082]
               },
-              properties: {
-                title: 'Mapbox',
-                description: '18th & Fernon, Aquinas Center'
+              'properties': {
+                'title': 'Mapbox',
+                'description': '18th & Fernon, Aquinas Center'
               }
             }
           ]
@@ -94,7 +94,6 @@
             )
             .addTo(map);
         }
-      
         </script>
         <% @stations.each do |station| %>
           <h2><%= station.id %></h2>
