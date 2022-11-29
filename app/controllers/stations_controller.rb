@@ -12,4 +12,9 @@ class StationsController < ApplicationController
     trip = Station.find(params[:id])
     render json: trip
   end
+
+  def json_method
+    @stations = Station.all
+    render json: @stations
+  end
 end

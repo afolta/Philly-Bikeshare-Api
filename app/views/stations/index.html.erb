@@ -7,6 +7,7 @@
       rel="stylesheet"
     />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+
     <link
     href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css"
     rel="stylesheet"
@@ -51,22 +52,10 @@
         mapboxgl.accessToken = 
         'pk.eyJ1IjoiZm9sdGFhcyIsImEiOiJjajBiNTRwZXEwMnVlMndvMjZnMWYyZzkxIn0.wMplMNqPeI1kNVVfR9RvVg';
 
-        const geojson = {
-          'type': 'FeatureCollection',
-          'features': [
-            {
-              'type': 'Feature',
-              'geometry': {
-                'type': 'Point',
-                'coordinates': [-75.174744, 39.93082]
-              },
-              'properties': {
-                'title': 'Mapbox',
-                'description': '18th & Fernon, Aquinas Center'
-              }
-            }
-          ]
-        };
+        fetch('/all-stations')
+        .then((response) => { 
+            response.json().then((data) => {
+                console.log(data)
 
         const map = new mapboxgl.Map({
             container: 'map', // container ID
@@ -75,29 +64,23 @@
             zoom: 12, // starting zoom
         });
 
-        // add markers to map
-        for (const feature of geojson.features) {
-          // create a HTML element for each feature
-          const el = document.createElement('div');
-          el.className = 'marker';
+        data.forEach((station) => {
+          let marker = new mapboxgl.Marker().setLngLat([station.longitude, station.latitude]).addTo(map);
+        });
 
-          // make a marker for each feature and add to the map
-          new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+        data.forEach((station) => {
+          let popup = new mapboxgl.Popup({ offset: 25 })
+           .setHTML(
+                  `<h3>${station.name}</h3>`
+                ).addTo(map);
+        });
 
-          new mapboxgl.Marker(el)
-            .setLngLat(feature.geometry.coordinates)
-            .setPopup(
-              new mapboxgl.Popup({ offset: 25 }) // add popups
-                .setHTML(
-                  `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
-                )
-            )
-            .addTo(map);
-        }
+        map.on("style.load", () => {
+          map.setFog({}); // Set the default atmosphere style
+        });
+
+            })
+        });        
         </script>
-        <% @stations.each do |station| %>
-          <h2><%= station.id %></h2>
-          <p>Station Name: <%= station.name%></p>
-        <% end %>
     </body>
 </html>
