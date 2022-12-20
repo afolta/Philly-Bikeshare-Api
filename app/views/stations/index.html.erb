@@ -1,14 +1,88 @@
-<html>
+<html lang="en">
   <head>
-    <title>Trips</title>
-    <div class="row">
-    <div class="col-xs-6">
+    <meta charset="utf-8" />
+    <title>Stations</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+
+    <link
+    href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css"
+    rel="stylesheet"
+    />
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .marker {
+      background-image: url('https://bicycletransit.wpenginepowered.com/wp-content/themes/indego/library/images/favicon.ico');
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+      max-width: 200px;
+    }
+
+    .mapboxgl-popup-content {
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+    }
+    </style>
   </head>
   <body>
         <h1>Trips</h1>
-        <% @stations.each do |station| %>
-          <h2><%= station.id %></h2>
-          <p>Station Name: <%= station.name%></p>
-        <% end %>
+
+<div id='map' style='width: 500px; height: 600px;'></div>
+        <script>
+        mapboxgl.accessToken = 
+        'pk.eyJ1IjoiZm9sdGFhcyIsImEiOiJjajBiNTRwZXEwMnVlMndvMjZnMWYyZzkxIn0.wMplMNqPeI1kNVVfR9RvVg';
+
+        fetch('/all-stations')
+        .then((response) => { 
+            response.json().then((data) => {
+                console.log(data)
+
+        const map = new mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v12', // style URL
+            center: [-75.174744, 39.93082], // starting position [lng, lat]
+            zoom: 12, // starting zoom
+        });
+
+        data.forEach((station) => {
+          let marker = new mapboxgl.Marker()
+          .setLngLat([station.longitude, station.latitude])
+          .setPopup(
+            new mapboxgl.Popup({ offset: 25 }) // add popups
+              .setHTML(
+                `<h3>Station: ${station.name}</h3>`
+              )
+          )
+          .addTo(map);
+        });
+
+        map.on("style.load", () => {
+          map.setFog({}); // Set the default atmosphere style
+        });
+
+            })
+        });
+        
+        </script>
     </body>
 </html>
